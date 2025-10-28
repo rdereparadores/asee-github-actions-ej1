@@ -1,0 +1,18 @@
+name: Ejercicio 1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  llamar-al-usuario:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Decir Hola Mundo
+        run: echo ¡Hola ${{ github.actor }}! Gracias por hacer push.
+      - name: Listar archivos
+        run: ls -la
+        
