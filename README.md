@@ -8,6 +8,7 @@ Sitio web personal estático de Iván Ruiz López, pensado para publicarse con G
 .
 ├── .github/
 │   └── workflows/
+│       ├── pages.yml
 │       └── saludo.yml
 ├── .gitignore
 ├── .nojekyll
@@ -22,7 +23,8 @@ Sitio web personal estático de Iván Ruiz López, pensado para publicarse con G
 - `assets/css/styles.css`: estilos base y responsive del sitio.
 - `.gitignore`: patrones básicos para archivos locales, IDEs, dependencias y temporales.
 - `.nojekyll`: evita el procesamiento con Jekyll en GitHub Pages.
-- `.github/workflows/saludo.yml`: flujo de GitHub Actions que se ejecuta al hacer push a `main`.
+- `.github/workflows/pages.yml`: workflow de GitHub Actions para publicar el sitio en GitHub Pages.
+- `.github/workflows/saludo.yml`: flujo auxiliar de GitHub Actions que se ejecuta al hacer push a `main`; no participa en el despliegue.
 - `README.md`: documentación del proyecto.
 
 ## Uso local
@@ -50,6 +52,8 @@ http://localhost:8080
 
 ## Despliegue en GitHub Pages
 
-Después de fusionar o publicar estos cambios en la rama principal, configura GitHub Pages para servir el sitio desde la rama principal (`main`) y desde la raíz del repositorio (`/`).
+El despliegue del sitio estático se realiza mediante GitHub Pages Actions con el workflow `.github/workflows/pages.yml`. Al ejecutarse sobre la rama principal, el workflow empaqueta el contenido estático del repositorio y lo publica en GitHub Pages.
 
-Limitación fuera del despliegue local: la activación de GitHub Pages debe realizarse en la configuración del repositorio en GitHub si todavía no está habilitada.
+Para usar este flujo, en la configuración del repositorio en GitHub ve a **Settings > Pages** y selecciona **GitHub Actions** como fuente (*source*) de GitHub Pages. No es necesario configurar Pages para servir desde una rama o desde la raíz del repositorio, porque la publicación la gestiona el workflow.
+
+Nota de alcance local del sprint: la activación/configuración remota de GitHub Pages y la comprobación de la URL pública quedan fuera de la verificación local. En local solo se valida que el sitio estático puede servirse y que la documentación describe el flujo de despliegue esperado.
