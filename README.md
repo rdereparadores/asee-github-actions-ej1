@@ -9,6 +9,8 @@ Sitio web personal estático de Iván Ruiz López, pensado para publicarse con G
 ├── .github/
 │   └── workflows/
 │       └── saludo.yml
+├── .gitignore
+├── .nojekyll
 ├── assets/
 │   └── css/
 │       └── styles.css
@@ -18,6 +20,8 @@ Sitio web personal estático de Iván Ruiz López, pensado para publicarse con G
 
 - `index.html`: página principal del sitio.
 - `assets/css/styles.css`: estilos base y responsive del sitio.
+- `.gitignore`: patrones básicos para archivos locales, IDEs, dependencias y temporales.
+- `.nojekyll`: evita el procesamiento con Jekyll en GitHub Pages.
 - `.github/workflows/saludo.yml`: flujo de GitHub Actions que se ejecuta al hacer push a `main`.
 - `README.md`: documentación del proyecto.
 
@@ -47,3 +51,5 @@ http://localhost:8080
 ## Despliegue en GitHub Pages
 
 Después de fusionar o publicar estos cambios en la rama principal, configura GitHub Pages para servir el sitio desde la rama principal (`main`) y desde la raíz del repositorio (`/`).
+
+Limitación fuera del despliegue local: la activación de GitHub Pages debe realizarse en la configuración del repositorio en GitHub si todavía no está habilitada.
